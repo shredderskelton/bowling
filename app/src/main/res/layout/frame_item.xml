@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/border">
+
+    <TextView
+        android:id="@+id/frameCountTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="1" />
+
+    <TextView
+        android:id="@+id/firstRollTextView"
+        style="@style/frameTextView"
+        app:layout_constraintBottom_toTopOf="@+id/secondRollTextView"
+        app:layout_constraintEnd_toStartOf="@+id/totalTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="2" />
+
+    <TextView
+        android:id="@+id/secondRollTextView"
+        style="@style/frameTextView"
+        app:layout_constraintBottom_toTopOf="@+id/thirdRollTextView"
+        app:layout_constraintEnd_toStartOf="@+id/totalTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/firstRollTextView"
+        tools:text="3" />
+
+    <TextView
+        android:id="@+id/thirdRollTextView"
+        style="@style/frameTextView"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/totalTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/secondRollTextView"
+        tools:text="4"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/totalTextView"
+        style="@style/frameTextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/firstRollTextView"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="9" />
+</android.support.constraint.ConstraintLayout>
