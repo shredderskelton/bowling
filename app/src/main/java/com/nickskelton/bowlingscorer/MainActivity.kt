@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    private var rolls = Array(21, { 0 })
+    private var rolls = IntArray(21)
     private var currentRoll: Int = 0
 
     private val adapter = FrameAdapter(this)
@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
             rolls[currentRoll] = it
             val newScorecard = Scorecard(rolls)
             if (!newScorecard.isValid) {
-                Snackbar.make(coordinatorLayout, "Invalid entry", Snackbar.LENGTH_LONG).show()
+                Snackbar.make(coordinatorLayout, "Invalid entry. Check how many pins remain...", Snackbar.LENGTH_LONG).show()
                 return
             }
 
@@ -69,20 +69,22 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun reset() {
-        rolls = Array(21, { 0 })
+        rolls = IntArray(21)
         currentRoll = 0
     }
 
     private fun validateInput(): Int? {
         try {
             val roll = editText.text.toString().toInt()
-            if (roll in 1..10) {
+            if (roll in 0..10) {
                 return roll
+            }else{
+                Snackbar.make(coordinatorLayout, "Invalid entry. Numbers between 0 and 10.", Snackbar.LENGTH_LONG).show()
             }
         } catch (e: NumberFormatException) {
-
+            Snackbar.make(coordinatorLayout, "Invalid entry. Numbers only.", Snackbar.LENGTH_LONG).show()
         }
-        Snackbar.make(coordinatorLayout, "Invalid entry", Snackbar.LENGTH_LONG).show()
+
         editText.setText("")
         return null
     }

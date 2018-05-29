@@ -18,7 +18,7 @@ class ExampleUnitTest {
         val numbers: IntArray = intArrayOf(0, 1, 2, 3, 4, 5, 6, 1, 8, 1, 0, 1, 2, 3, 4, 5, 6, 1, 9, 1, 3)
 
         //When
-        val scorecard = Scorecard(numbers.toTypedArray())
+        val scorecard = Scorecard(numbers)
 
         //Then
         assertEquals(66, scorecard.finalScore)
@@ -31,7 +31,7 @@ class ExampleUnitTest {
         val numbers: IntArray = intArrayOf(10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10)
 
         //When
-        val scorecard = Scorecard(numbers.toTypedArray())
+        val scorecard = Scorecard(numbers)
 
         //Then
         assertEquals(300, scorecard.finalScore)
@@ -44,7 +44,7 @@ class ExampleUnitTest {
         val numbers: IntArray = intArrayOf(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 
         //When
-        val scorecard = Scorecard(numbers.toTypedArray())
+        val scorecard = Scorecard(numbers)
 
         //Then
         assertEquals(20, scorecard.finalScore)
@@ -57,7 +57,7 @@ class ExampleUnitTest {
         val numbers: IntArray = intArrayOf(1, 4, 4, 5, 6, 4, 5, 5, 10, 0, 1, 7, 3, 6, 4, 10, 2, 8, 6)
 
         //When
-        val scorecard = Scorecard(numbers.toTypedArray())
+        val scorecard = Scorecard(numbers)
 
         //Then
         assertEquals(133, scorecard.finalScore)
@@ -70,7 +70,7 @@ class ExampleUnitTest {
         val numbers: IntArray = intArrayOf(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 
         //When
-        val scorecard = Scorecard(numbers.toTypedArray())
+        val scorecard = Scorecard(numbers)
 
         //Then
         assertEquals(0, scorecard.finalScore)
@@ -83,7 +83,7 @@ class ExampleUnitTest {
         val numbers: IntArray = intArrayOf(2, 2, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 
         //When
-        val scorecard = Scorecard(numbers.toTypedArray())
+        val scorecard = Scorecard(numbers)
 
         //Then
         assertEquals(14, scorecard.finalScore)
@@ -96,7 +96,7 @@ class ExampleUnitTest {
         val numbers: IntArray = intArrayOf(1, 4)
 
         //When
-        val scorecard = Scorecard(numbers.toTypedArray())
+        val scorecard = Scorecard(numbers)
 
         //Then
         assertEquals(5, scorecard.finalScore)
@@ -109,7 +109,7 @@ class ExampleUnitTest {
         val numbers: IntArray = intArrayOf(2, 8, 10, 10, 2, 1, 1, 9, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 
         //When
-        val scorecard = Scorecard(numbers.toTypedArray())
+        val scorecard = Scorecard(numbers)
 
         //Then
         assertEquals(78, scorecard.finalScore)

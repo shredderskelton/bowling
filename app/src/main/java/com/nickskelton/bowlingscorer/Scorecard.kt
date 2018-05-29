@@ -9,12 +9,12 @@ import java.util.*
  *              some games will consist of less than 21 rolls, these should be padded out with 0's
  *
  */
-class Scorecard(rolls: Array<Int>) {
+class Scorecard(rolls: IntArray) {
     val frames: Array<Frame> = calculate(rolls)
     val finalScore = frames.last().cumulativeTotal
     val isValid = frames.all { it.valid }
 
-    private fun calculate(rolls: Array<Int>): Array<Frame> {
+    private fun calculate(rolls: IntArray): Array<Frame> {
         val frames = Stack<Frame>()
         var workingFrame: Frame
         var i = 0
@@ -47,9 +47,9 @@ class Scorecard(rolls: Array<Int>) {
     private fun isLastFrame(frames: Stack<Frame>) =
             frames.size == 9
 
-    private fun isSpare(rolls: Array<Int>, i: Int) =
+    private fun isSpare(rolls: IntArray, i: Int) =
             rolls[i] + rolls[i + 1] == 10
 
-    private fun isStrike(rolls: Array<Int>, i: Int) =
+    private fun isStrike(rolls: IntArray, i: Int) =
             rolls[i] == 10
 }
